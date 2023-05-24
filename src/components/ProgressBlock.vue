@@ -7,7 +7,12 @@
           <div class="kam-197544-main-content__title">Мои достижения</div>
         </div>
         <div class="kam-197544-main-content__body">
-          <ProgessBlockItem image="aaa" text="hhh" />
+          <ProgessBlockItem
+            v-for="item in itemsProps"
+            :key="item.text"
+            :image="item.image"
+            :text="item.text"
+          />
         </div>
       </div>
     </div>
@@ -18,7 +23,7 @@
 import BackArrow from './UI/BackArrow.vue';
 import ProgessBlockItem from './ProgessBlockItem.vue';
 import { mapState } from 'vuex';
-// import { data } from '@/data/data';
+import { data } from '@/data/data';
 
 export default {
   components: { BackArrow, ProgessBlockItem },
@@ -35,19 +40,19 @@ export default {
   },
   computed: {
     ...mapState({
-      user: (state) => state.progress.userData.user,
-      age: (state) => state.progress.userData.age,
-      secret: (state) => state.progress.userData.secret,
-      gadget: (state) => state.progress.userData.gadget,
-      warranty: (state) => state.progress.userData.warranty,
-      registrationDate: (state) => state.progress.userData.registrationDate,
+      // userState: (state) => state.progress.userData.user,
+      // ageState: (state) => state.progress.userData.age,
+      // secret: (state) => state.progress.userData.secret,
+      // gadget: (state) => state.progress.userData.gadget,
+      // warranty: (state) => state.progress.userData.warranty,
+      // registrationDate: (state) => state.progress.userData.registrationDate,
+      userData: (state) => state.progress.userData,
     }),
   },
   created() {
-    console.log(this.$store);
-    // for (const key in this.itemsProps) {
-    //   this.itemsProps[key].image = data[this.$store.data[key]].image;
-    // }
+    for (const key in this.itemsProps) {
+      this.itemsProps[key].image = data[this.userData[key]].image;
+    }
   },
 };
 </script>
