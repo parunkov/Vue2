@@ -13,10 +13,43 @@
     </div>
   </div>
 </template>
+
 <script>
 import BackArrow from './UI/BackArrow.vue';
 import ProgessBlockItem from './ProgessBlockItem.vue';
+import { mapState } from 'vuex';
+// import { data } from '@/data/data';
 
-export default { components: { BackArrow, ProgessBlockItem } };
+export default {
+  components: { BackArrow, ProgessBlockItem },
+  data() {
+    return {
+      itemsProps: {
+        user: { text: 'Пользователь', image: '' },
+        age: { text: '18+', image: '' },
+        secret: { text: 'Без секретов', image: '' },
+        gadget: { text: 'Инспектор&nbsp;Гаджет', image: '' },
+        warranty: { text: 'Гарантия', image: '' },
+      },
+    };
+  },
+  computed: {
+    ...mapState({
+      user: (state) => state.progress.userData.user,
+      age: (state) => state.progress.userData.age,
+      secret: (state) => state.progress.userData.secret,
+      gadget: (state) => state.progress.userData.gadget,
+      warranty: (state) => state.progress.userData.warranty,
+      registrationDate: (state) => state.progress.userData.registrationDate,
+    }),
+  },
+  created() {
+    console.log(this.$store);
+    // for (const key in this.itemsProps) {
+    //   this.itemsProps[key].image = data[this.$store.data[key]].image;
+    // }
+  },
+};
 </script>
+
 <style lang="scss"></style>

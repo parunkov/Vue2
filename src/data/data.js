@@ -227,13 +227,4 @@ const data = {
   },
 };
 
-const initialData = {
-  user: 'iron',
-  age: 'ageDisabled',
-  secret: 'secretDisabled',
-  gadget: 'gadgetDisabled',
-  warranty: 'warrantyDisabled',
-  registrationDate: '',
-};
-
-export { data, initialData };
+export { data };
