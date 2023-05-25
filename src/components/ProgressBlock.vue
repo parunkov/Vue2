@@ -33,7 +33,7 @@ export default {
         user: { text: 'Пользователь', image: '' },
         age: { text: '18+', image: '' },
         secret: { text: 'Без секретов', image: '' },
-        gadget: { text: 'Инспектор&nbsp;Гаджет', image: '' },
+        gadget: { text: 'Инспектор Гаджет', image: '' },
         warranty: { text: 'Гарантия', image: '' },
       },
     };

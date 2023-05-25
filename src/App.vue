@@ -30,4 +30,5 @@ nav {
     }
   }
 }
+@import '@/styles/stiles.scss';
 </style>
