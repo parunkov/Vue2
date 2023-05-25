@@ -21,7 +21,7 @@
       <div class="kam-197544-popin__bar-text">{{ data.barEndText }}</div>
     </div>
     <div class="kam-197544-popin__bar">
-      <div class="kam-197544-popin__bar-progress" style="width: {{data.barProgress}}"></div>
+      <div class="kam-197544-popin__bar-progress" :style="`width: ${data.barProgress}`"></div>
     </div>
     <a v-if="data.buttonLink" :href="data.buttonLink" class="kam-197544-popin__button">{{
       data.buttonText
