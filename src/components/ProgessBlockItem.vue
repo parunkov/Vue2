@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="kam-197544-main-content__progress kam-197544-main-content__progress_type_${key}">
+    <div class="kam-197544-main-content__progress" @click="$emit('openProgressPopin', name)">
       <div class="kam-197544-main-content__progress-image">
         <img :src="image" />
       </div>
@@ -12,11 +12,15 @@
 export default {
   props: {
     image: {
-      type: Text,
+      type: String,
       required: true,
     },
     text: {
-      type: Text,
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
       required: true,
     },
   },

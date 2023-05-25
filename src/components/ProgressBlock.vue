@@ -8,13 +8,16 @@
         </div>
         <div class="kam-197544-main-content__body">
           <ProgessBlockItem
-            v-for="item in itemsProps"
-            :key="item.text"
+            v-for="(item, key) in itemsProps"
+            :key="key"
             :image="item.image"
             :text="item.text"
+            :name="key"
+            @openProgressPopin="onItemClick"
           />
         </div>
       </div>
+      <ProgressPopin v-if="popinOpened" />
     </div>
   </div>
 </template>
@@ -24,9 +27,10 @@ import BackArrow from './UI/BackArrow.vue';
 import ProgessBlockItem from './ProgessBlockItem.vue';
 import { mapState } from 'vuex';
 import { data } from '@/data/data';
+import ProgressPopin from './ProgressPopin.vue';
 
 export default {
-  components: { BackArrow, ProgessBlockItem },
+  components: { BackArrow, ProgessBlockItem, ProgressPopin },
   data() {
     return {
       itemsProps: {
@@ -36,6 +40,7 @@ export default {
         gadget: { text: 'Инспектор Гаджет', image: '' },
         warranty: { text: 'Гарантия', image: '' },
       },
+      popinOpened: false,
     };
   },
   computed: {
@@ -48,6 +53,14 @@ export default {
       // registrationDate: (state) => state.progress.userData.registrationDate,
       userData: (state) => state.progress.userData,
     }),
+  },
+  methods: {
+    openPopin() {
+      this.popinOpened = true;
+    },
+    onItemClick(name) {
+      console.log(name);
+    },
   },
   created() {
     for (const key in this.itemsProps) {
