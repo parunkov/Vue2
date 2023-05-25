@@ -66,6 +66,7 @@ export default {
       // console.log(name);
       // console.log(this.userData);
       this.popinData = data[this.userData[name]];
+      this.popinVisible = true;
       console.log(this.popinData);
       this.popinOpened = true;
     },

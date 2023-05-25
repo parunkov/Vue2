@@ -100,6 +100,8 @@
 }
 .kam-197544-main-content {
     width: 100vw;
+    // height: calc(100vh - 76px);
+    overflow: hidden;
     color: white;
     &__container {
         padding-top: 50px;
@@ -259,7 +261,7 @@
 }
 .kam-197544-popin {
     // display: none;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 76px;
     height: calc(100vh - 76px);

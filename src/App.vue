@@ -25,6 +25,7 @@ body {
 nav {
   padding: 30px;
   background: black;
+  height: 76px;
 
   a {
     font-weight: bold;
