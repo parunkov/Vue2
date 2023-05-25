@@ -17,7 +17,7 @@
           />
         </div>
       </div>
-      <ProgressPopin v-if="popinOpened" :data="popinData" />
+      <ProgressPopin v-if="popinOpened" :data="popinData" @closeProgressPopin="closePopin" />
     </div>
   </div>
 </template>
@@ -56,15 +56,15 @@ export default {
     }),
   },
   methods: {
-    // openPopin() {
-    //   this.popinOpened = true;
-    // },
     onItemClick(name) {
-      console.log(name);
+      // console.log(name);
       // console.log(this.userData);
       this.popinData = data[this.userData[name]];
       console.log(this.popinData);
       this.popinOpened = true;
+    },
+    closePopin() {
+      this.popinOpened = false;
     },
   },
   created() {

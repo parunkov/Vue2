@@ -1,6 +1,6 @@
 <template>
   <div class="kam-197544-popin">
-    <div class="kam-197544-popin__arrow">
+    <div class="kam-197544-popin__arrow" @click="$emit('closeProgressPopin')">
       <svg
         width="31"
         height="30"
@@ -26,11 +26,21 @@
     <a v-if="data.buttonLink" :href="data.buttonLink" class="kam-197544-popin__button">{{
       data.buttonText
     }}</a>
-    <div v-else class="kam-197544-popin__button kam-197544-popin__button_type_close">
+    <div
+      v-else
+      class="kam-197544-popin__button kam-197544-popin__button_type_close"
+      @click="$emit('closeProgressPopin')"
+    >
       {{ data.buttonText }}
     </div>
-    <div v-if="data.isCloseButton" class="kam-197544-popin__close-button">Закрыть</div>
-    <div class="kam-197544-popin__cross">
+    <div
+      v-if="data.isCloseButton"
+      class="kam-197544-popin__close-button"
+      @click="$emit('closeProgressPopin')"
+    >
+      Закрыть
+    </div>
+    <div class="kam-197544-popin__cross" @click="$emit('closeProgressPopin')">
       <svg
         width="40"
         height="40"

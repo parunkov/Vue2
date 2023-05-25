@@ -84,7 +84,7 @@ const data = {
     barEndText: 'Бриллиант',
     barProgress: '0',
     buttonText: 'Перейти к подтверждению возраста',
-    buttonLink: '',
+    buttonLink: '/control',
     isCloseButton: true,
   },
   age: {
@@ -107,7 +107,7 @@ const data = {
     barEndText: 'Золото',
     barProgress: '0',
     buttonText: 'Перейти к заполнению',
-    buttonLink: '/new-personal',
+    buttonLink: '/control',
     isCloseButton: true,
   },
   secretGold: {
@@ -118,7 +118,7 @@ const data = {
     barEndText: 'Платина',
     barProgress: '70%',
     buttonText: 'Перейти к заполнению',
-    buttonLink: '/new-personal',
+    buttonLink: '/control',
     isCloseButton: true,
   },
   secretPlatinum: {
@@ -130,7 +130,7 @@ const data = {
     barEndText: 'Бриллиант',
     barProgress: '70%',
     buttonText: 'Перейти к заполнению',
-    buttonLink: '/new-personal',
+    buttonLink: '/control',
     isCloseButton: true,
   },
   secret: {
@@ -153,7 +153,7 @@ const data = {
     barEndText: 'Золото',
     barProgress: '0',
     buttonText: 'Привязать устройство',
-    buttonLink: '/new-personal',
+    buttonLink: '/control',
     isCloseButton: true,
   },
   gadgetGold: {
@@ -164,7 +164,7 @@ const data = {
     barEndText: 'Платина',
     barProgress: '70%',
     buttonText: 'Привязать устройство',
-    buttonLink: '/new-personal',
+    buttonLink: '/control',
     isCloseButton: true,
   },
   gadgetPlatinum: {
@@ -176,7 +176,7 @@ const data = {
     barEndText: 'Изумруд',
     barProgress: '70%',
     buttonText: 'Привязать устройство',
-    buttonLink: '/new-personal',
+    buttonLink: '/control',
     isCloseButton: true,
   },
   gadgetEmerald: {
@@ -188,7 +188,7 @@ const data = {
     barEndText: 'Бриллиант',
     barProgress: '70%',
     buttonText: 'Привязать устройство',
-    buttonLink: '/new-personal',
+    buttonLink: '/control',
     isCloseButton: true,
   },
   gadget: {
@@ -211,7 +211,7 @@ const data = {
     barEndText: 'Бриллиант',
     barProgress: '0',
     buttonText: 'Ввести дату покупки',
-    buttonLink: '',
+    buttonLink: '/control',
     isCloseButton: true,
   },
   warranty: {
