@@ -1,5 +1,8 @@
 <template>
-  <div class="kam-197544-popin">
+  <div
+    class="kam-197544-popin"
+    :class="{ 'kam-197544-popin_visible': visible, 'kam-197544-popin_hidden': !visible }"
+  >
     <div class="kam-197544-popin__arrow" @click="$emit('closeProgressPopin')">
       <svg
         width="31"
@@ -65,6 +68,13 @@ export default {
       type: Object,
       required: true,
     },
+    visible: {
+      type: Boolean,
+      default: true,
+    },
+  },
+  data() {
+    return {};
   },
 };
 </script>

@@ -17,7 +17,12 @@
           />
         </div>
       </div>
-      <ProgressPopin v-if="popinOpened" :data="popinData" @closeProgressPopin="closePopin" />
+      <ProgressPopin
+        v-if="popinOpened"
+        :data="popinData"
+        @closeProgressPopin="closePopin"
+        :visible="popinVisible"
+      />
     </div>
   </div>
 </template>
@@ -41,6 +46,7 @@ export default {
         warranty: { text: 'Гарантия', image: '' },
       },
       popinOpened: false,
+      popinVisible: true,
       popinData: {},
     };
   },
@@ -64,7 +70,10 @@ export default {
       this.popinOpened = true;
     },
     closePopin() {
-      this.popinOpened = false;
+      this.popinVisible = false;
+      setTimeout(() => {
+        this.popinOpened = false;
+      }, 500);
     },
   },
   created() {
