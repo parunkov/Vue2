@@ -17,7 +17,7 @@
           />
         </div>
       </div>
-      <ProgressPopin v-if="popinOpened" />
+      <ProgressPopin v-if="popinOpened" :data="popinData" />
     </div>
   </div>
 </template>
@@ -41,6 +41,7 @@ export default {
         warranty: { text: 'Гарантия', image: '' },
       },
       popinOpened: false,
+      popinData: {},
     };
   },
   computed: {
@@ -55,11 +56,15 @@ export default {
     }),
   },
   methods: {
-    openPopin() {
-      this.popinOpened = true;
-    },
+    // openPopin() {
+    //   this.popinOpened = true;
+    // },
     onItemClick(name) {
       console.log(name);
+      // console.log(this.userData);
+      this.popinData = data[this.userData[name]];
+      console.log(this.popinData);
+      this.popinOpened = true;
     },
   },
   created() {

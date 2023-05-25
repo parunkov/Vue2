@@ -8,6 +8,10 @@
 
 <style lang="scss">
 * {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
   background: black;
 }
 #app {
@@ -20,6 +24,7 @@
 
 nav {
   padding: 30px;
+  background: black;
 
   a {
     font-weight: bold;

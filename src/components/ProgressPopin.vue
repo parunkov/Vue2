@@ -12,26 +12,24 @@
       </svg>
     </div>
     <div class="kam-197544-popin__image">
-      <img src="${data.image}" />
+      <img :src="data.image" />
     </div>
-    <div class="kam-197544-popin__title">data.title</div>
-    <div class="kam-197544-popin__text">data.text</div>
+    <div class="kam-197544-popin__title">{{ data.title }}</div>
+    <div class="kam-197544-popin__text">{{ data.text }}</div>
     <div class="kam-197544-popin__bar-text-wrapper">
-      <div class="kam-197544-popin__bar-text">data.barSartText</div>
-      <div class="kam-197544-popin__bar-text">${data.barEndText}</div>
+      <div class="kam-197544-popin__bar-text">{{ data.barSartText }}</div>
+      <div class="kam-197544-popin__bar-text">{{ data.barEndText }}</div>
     </div>
     <div class="kam-197544-popin__bar">
-      <div class="kam-197544-popin__bar-progress" style="width: ${data.barProgress}"></div>
+      <div class="kam-197544-popin__bar-progress" style="width: {{data.barProgress}}"></div>
     </div>
-    ${data.buttonLink ? `<a href="${data.buttonLink}" class="kam-197544-popin__button"
-      >${data.buttonText}</a
-    >` : `
-    <div class="kam-197544-popin__button kam-197544-popin__button_type_close">
-      ${data.buttonText}
+    <a v-if="data.buttonLink" :href="data.buttonLink" class="kam-197544-popin__button">{{
+      data.buttonText
+    }}</a>
+    <div v-else class="kam-197544-popin__button kam-197544-popin__button_type_close">
+      {{ data.buttonText }}
     </div>
-    `} ${data.isCloseButton ? `
-    <div class="kam-197544-popin__close-button">Закрыть</div>
-    ` : ''}
+    <div v-if="data.isCloseButton" class="kam-197544-popin__close-button">Закрыть</div>
     <div class="kam-197544-popin__cross">
       <svg
         width="40"
@@ -55,7 +53,7 @@ export default {
   props: {
     data: {
       type: Object,
-      //   required: true,
+      required: true,
     },
   },
 };
