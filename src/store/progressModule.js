@@ -9,7 +9,9 @@ export default {
     },
     regDate: '',
     ageConfirmed: false,
+    profileFilling: 0,
   }),
+
   mutations: {
     SET_USER(state, payload) {
       state.regDate = payload;
@@ -30,12 +32,26 @@ export default {
       setUserProgress('emerald', 182, 365, dateDiff);
       setUserProgress('brilliant', 365, 36500, dateDiff);
     },
+
     SET_AGE(state, payload) {
       state.ageConfirmed = payload;
       const ageValue = payload ? 'age' : 'ageDisabled';
       state.userData.age = ageValue;
     },
+
+    SET_SECRET(state, payload) {
+      const setSecretProgress = (newValue, min, max) => {
+        if (payload > min && payload <= max && newValue !== state.userData.secret) {
+          state.userData.secret = newValue;
+        }
+      };
+
+      setSecretProgress('secretGold', 0, 1);
+      setSecretProgress('secretPlatinum', 1, 2);
+      setSecretProgress('secret', 2, 10);
+    },
   },
+
   actions: {
     setUser({ commit }, payload) {
       commit('SET_USER', payload);
@@ -43,6 +59,10 @@ export default {
     setAge({ commit }, payload) {
       commit('SET_AGE', payload);
     },
+    setSecret({ commit }, payload) {
+      commit('SET_SECRET', payload);
+    },
   },
+
   namespaced: true,
 };
