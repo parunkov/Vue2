@@ -7,15 +7,14 @@ export default {
       gadget: 'gadgetDisabled',
       warranty: 'warrantyDisabled',
     },
+    regDate: '',
+    ageConfirmed: false,
   }),
   mutations: {
     SET_USER(state, payload) {
-      // console.log(state);
-      // console.log(payload);
+      state.regDate = payload;
       const regDate = new Date(payload);
       const dateDiff = (new Date() - regDate) / 1000 / 60 / 60 / 24;
-      console.log('🚀 ~ file: progressModule.js:17 ~ SET_USER ~ dateDiff:', dateDiff);
-      console.log(state.userData.user);
 
       const setUserProgress = (newValue, days, end, dateDiff) => {
         if (dateDiff > days && dateDiff <= end && newValue !== state.userData.user) {
@@ -31,10 +30,18 @@ export default {
       setUserProgress('emerald', 182, 365, dateDiff);
       setUserProgress('brilliant', 365, 36500, dateDiff);
     },
+    SET_AGE(state, payload) {
+      state.ageConfirmed = payload;
+      const ageValue = payload ? 'age' : 'ageDisabled';
+      state.userData.age = ageValue;
+    },
   },
   actions: {
     setUser({ commit }, payload) {
       commit('SET_USER', payload);
+    },
+    setAge({ commit }, payload) {
+      commit('SET_AGE', payload);
     },
   },
   namespaced: true,
