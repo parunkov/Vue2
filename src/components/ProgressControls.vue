@@ -16,12 +16,18 @@
       <h4>8</h4>
     </div>
     <div class="control-item">
-      <h4></h4>
-      <input type="text" />
+      <h4>Привязано устройств:</h4>
+      <select :value="devices" @change="changeGadgetValue">
+        <option v-for="option in deviceOptions" :value="option.value" :key="option.value">
+          {{ option.text }}
+        </option>
+      </select>
     </div>
-    <div class="control-item">
-      <h4></h4>
-      <input type="text" />
+    <div class="control-item control-item_content_warranty">
+      <label>
+        <input type="checkbox" :checked="warrantyConfirmed" @input="confirmWarranty" />
+        <h4>Ввести дату покупки</h4>
+      </label>
     </div>
   </div>
 </template>
@@ -29,16 +35,24 @@
 import { mapActions, mapState } from 'vuex';
 
 export default {
-  // data() {
-  //   return {
-  //     profileFilling: 0,
-  //   };
-  // },
+  data() {
+    return {
+      deviceOptions: [
+        { value: 0, text: '0' },
+        { value: 1, text: '1' },
+        { value: 2, text: '2' },
+        { value: 3, text: '3' },
+        { value: 4, text: '4 и более' },
+      ],
+    };
+  },
   computed: {
     ...mapState({
       regDate: (state) => state.progress.regDate,
       ageConfirmed: (state) => state.progress.ageConfirmed,
       profileFilling: (state) => state.progress.profileFilling,
+      devices: (state) => state.progress.devices,
+      warrantyConfirmed: (state) => state.progress.warrantyConfirmed,
     }),
   },
   methods: {
@@ -46,19 +60,25 @@ export default {
       setUser: 'progress/setUser',
       setAge: 'progress/setAge',
       setSecret: 'progress/setSecret',
+      setGadget: 'progress/setGadget',
+      setWarranty: 'progress/setWarranty',
     }),
-    onDateInput(event) {
-      this.regDate = event.target.value;
-      this.setUser(event.target.value);
+    onDateInput({ target }) {
+      this.regDate = target.value;
+      this.setUser(target.value);
     },
-    confirmAge(event) {
-      console.log(event.target.checked);
-      this.setAge(event.target.checked);
+    confirmAge({ target }) {
+      this.setAge(target.checked);
     },
-    fillProfile(event) {
-      const filling = event.target.value;
-      console.log(filling);
-      this.setSecret(filling);
+    fillProfile({ target }) {
+      this.setSecret(target.value);
+    },
+    changeGadgetValue({ target }) {
+      console.log(target.value);
+      this.setGadget(target.value);
+    },
+    confirmWarranty({ target }) {
+      this.setWarranty(target.checked);
     },
   },
   mounted() {
@@ -71,15 +91,20 @@ export default {
 .control-item {
   display: flex;
   margin-bottom: 30px;
-  &_content_age {
+  &_content_age,
+  &_content_warranty {
     padding-left: 10px;
   }
   label {
     display: flex;
+    cursor: pointer;
   }
   h4 {
     margin-left: 10px;
     margin-right: 10px;
+  }
+  input[type='range'] {
+    cursor: pointer;
   }
 }
 </style>
