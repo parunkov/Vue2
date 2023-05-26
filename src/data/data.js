@@ -2,7 +2,7 @@ const data = {
   iron: {
     image: 'https://storage.kameleoon.com/iqos/new_mechanics_for_personal_account/iron.png',
     title: 'Пользователь',
-    text: 'Достижение получено за регистрацию в IQOS',
+    text: 'Достижение получено за регистрацию в IQOS',
     barSartText: 'Железо',
     barEndText: 'Бронза',
     barProgress: '70%',

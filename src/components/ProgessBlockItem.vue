@@ -4,7 +4,7 @@
       <div class="kam-197544-main-content__progress-image">
         <img :src="image" />
       </div>
-      <div class="kam-197544-main-content__progress-text">{{ text }}</div>
+      <div class="kam-197544-main-content__progress-text" v-html="text"></div>
     </div>
   </div>
 </template>

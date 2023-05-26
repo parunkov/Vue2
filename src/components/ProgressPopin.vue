@@ -18,7 +18,7 @@
       <img :src="data.image" />
     </div>
     <div class="kam-197544-popin__title">{{ data.title }}</div>
-    <div class="kam-197544-popin__text">{{ data.text }}</div>
+    <div class="kam-197544-popin__text" v-html="data.text"></div>
     <div class="kam-197544-popin__bar-text-wrapper">
       <div class="kam-197544-popin__bar-text">{{ data.barSartText }}</div>
       <div class="kam-197544-popin__bar-text">{{ data.barEndText }}</div>
