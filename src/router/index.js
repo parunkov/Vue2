@@ -1,14 +1,14 @@
-import { createRouter, createWebHistory } from "vue-router";
-import ControlPage from "@/pages/ControlPage";
-import DemoPage from "@/pages/DemoPage";
+import { createRouter, createWebHistory } from 'vue-router';
+import ControlPage from '@/pages/ControlPage';
+import DemoPage from '@/pages/DemoPage';
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     component: DemoPage,
   },
   {
-    path: "/control",
+    path: '/control',
     component: ControlPage,
   },
 ];
