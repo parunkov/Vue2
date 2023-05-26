@@ -30,9 +30,12 @@ nav {
   a {
     font-weight: bold;
     color: #2c3e50;
+    margin-right: 40px;
+    text-decoration: none;
+    color: white;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: #8af0c2;
     }
   }
 }
