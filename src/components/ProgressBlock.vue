@@ -1,29 +1,27 @@
 <template>
-  <div>
-    <div class="kam-197544-main-content">
-      <div class="kam-197544-main-content__container">
-        <div class="kam-197544-main-content__header">
-          <BackArrow />
-          <div class="kam-197544-main-content__title">Мои достижения</div>
-        </div>
-        <div class="kam-197544-main-content__body">
-          <ProgessBlockItem
-            v-for="(item, key) in itemsProps"
-            :key="key"
-            :image="item.image"
-            :text="item.text"
-            :name="key"
-            @openProgressPopin="onItemClick"
-          />
-        </div>
+  <div class="kam-197544-main-content">
+    <div class="kam-197544-main-content__container">
+      <div class="kam-197544-main-content__header">
+        <BackArrow />
+        <div class="kam-197544-main-content__title">Мои достижения</div>
       </div>
-      <ProgressPopin
-        v-if="popinOpened"
-        :data="popinData"
-        @closeProgressPopin="closePopin"
-        :visible="popinVisible"
-      />
+      <div class="kam-197544-main-content__body">
+        <ProgessBlockItem
+          v-for="(item, key) in itemsProps"
+          :key="key"
+          :image="item.image"
+          :text="item.text"
+          :name="key"
+          @openProgressPopin="onItemClick"
+        />
+      </div>
     </div>
+    <ProgressPopin
+      v-if="popinOpened"
+      :data="popinData"
+      @closeProgressPopin="closePopin"
+      :visible="popinVisible"
+    />
   </div>
 </template>
 

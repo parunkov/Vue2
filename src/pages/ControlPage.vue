@@ -1,7 +1,11 @@
 <template>
-  <div></div>
+  <div>
+    <ProgressControls />
+  </div>
 </template>
 
 <script>
-export default {};
+import ProgressControls from '@/components/ProgressControls.vue';
+
+export default { components: { ProgressControls } };
 </script>
