@@ -1,5 +1,11 @@
 # Компонент "Достижения" личного кабинета пользователя
 
+Компонент на Vue
+
+## Демо-страница
+
+https://parunkov.github.io/Vue2/
+
 ## Project setup
 ```
 npm install
