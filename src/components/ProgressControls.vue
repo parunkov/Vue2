@@ -81,10 +81,6 @@ export default {
       this.setWarranty(target.checked);
     },
   },
-  mounted() {
-    // console.log(this.$store);
-    // console.log(this.setUserProgress);
-  },
 };
 </script>
 <style lang="scss" scoped>

@@ -50,22 +50,13 @@ export default {
   },
   computed: {
     ...mapState({
-      // userState: (state) => state.progress.userData.user,
-      // ageState: (state) => state.progress.userData.age,
-      // secret: (state) => state.progress.userData.secret,
-      // gadget: (state) => state.progress.userData.gadget,
-      // warranty: (state) => state.progress.userData.warranty,
-      // registrationDate: (state) => state.progress.userData.registrationDate,
       userData: (state) => state.progress.userData,
     }),
   },
   methods: {
     onItemClick(name) {
-      // console.log(name);
-      // console.log(this.userData);
       this.popinData = data[this.userData[name]];
       this.popinVisible = true;
-      // console.log(this.popinData);
       this.popinOpened = true;
     },
     closePopin() {
