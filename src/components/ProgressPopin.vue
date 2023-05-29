@@ -26,9 +26,9 @@
     <div class="kam-197544-popin__bar">
       <div class="kam-197544-popin__bar-progress" :style="`width: ${data.barProgress}`"></div>
     </div>
-    <a v-if="data.buttonLink" :href="data.buttonLink" class="kam-197544-popin__button">{{
-      data.buttonText
-    }}</a>
+    <div v-if="data.buttonLink" class="kam-197544-popin__button" @click="onPopinLinkClick">
+      {{ data.buttonText }}
+    </div>
     <div
       v-else
       class="kam-197544-popin__button kam-197544-popin__button_type_close"
@@ -73,8 +73,11 @@ export default {
       default: true,
     },
   },
-  data() {
-    return {};
+  methods: {
+    onPopinLinkClick() {
+      console.log(document.querySelector('.nav-control'));
+      document.querySelector('.nav-control')?.click();
+    },
   },
 };
 </script>
